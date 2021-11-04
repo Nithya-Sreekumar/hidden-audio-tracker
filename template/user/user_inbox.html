@@ -1,0 +1,71 @@
+{% extends 'user/user_base.html' %}
+{% block headpart %}
+<style>
+table.paleBlueRows {
+    font-family: "Times New Roman", Times, serif;
+    border: 1px solid #FFFFFF;
+    width: 550px;
+    height: 200px;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  table.paleBlueRows td, table.paleBlueRows th {
+    border: 1px solid #FFFFFF;
+    padding: 3px 2px;
+  }
+  table.paleBlueRows tbody td {
+    font-size: 13px;
+  }
+  table.paleBlueRows tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  table.paleBlueRows thead {
+    background: #0B6FA4;
+    border-bottom: 5px solid #FFFFFF;
+  }
+  table.paleBlueRows thead th {
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #FFFFFF;
+  }
+  table.paleBlueRows thead th:first-child {
+    border-left: none;
+  }
+  
+  table.paleBlueRows tfoot {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    background: #D0E4F5;
+    border-top: 3px solid #444444;
+  }
+  table.paleBlueRows tfoot td {
+    font-size: 14px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+
+<!-- testimonials -->
+<section class="team-main-sec bg-li py-5" id="testi">
+    <div class="container py-xl-5 py-lg-3">
+        <h3 class="tittle text-center text-bl font-weight-bold">Inbox </h3>
+       <center>
+            <table  class="paleBlueRows">
+                <tr><th>From</th><th>sub</th><th>date</th><th>Links</th></tr>
+                {% for d in udata %}
+               
+                <tr><td>{{d.1}}</td><td>{{d.3}}</td><td>{{d.5}}</td><td><a href="/inbox/?msgid={{d.0}}">Click</a></td></tr>
+               {% endfor %}
+            <td></tr></table>
+            </center>
+        </div>
+    
+    </div>
+</section>
+<!-- //testimonials -->
+
+
+{% endblock %}

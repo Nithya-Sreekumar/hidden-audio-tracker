@@ -1,0 +1,90 @@
+
+{% extends 'guest/guest_base.html' %}
+{% block content %}
+	<!-- page details -->
+	<div class="breadcrumb-mobamu">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="index.html">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Registration Form</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+	<!-- booking form -->
+	<div class="register-w3 py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="tittle text-center text-bl font-weight-bold">Registration Form</h3>
+			<p class="sub-tittle text-center mt-2 mb-sm-5 mb-4 pb-xl-3">Be a part of the world of secrets and Encryption </p>
+			<div class="comment-top mt-5">
+				<div class="comment-bottom mobamuinfo_mail_grid_right">
+					<form action="#" method="post">
+                        {% csrf_token %}
+						<div class="row">
+							<div class="col-lg-6 form-group">
+								<label>First Name</label>
+								<input class="form-control" type="text" name="name" placeholder="Type Here.." required="">
+							</div>
+							<div class="col-lg-6 form-group">
+								<label>Email</label>
+								<input class="form-control" type="email" name="email" placeholder="Email" required="">
+							</div>
+                        </div>
+                        <div class="form-group">
+							<label>Address</label>
+							<textarea class="form-control" name="address" placeholder="Write Here.." required=""></textarea>
+						</div>
+                        
+						<div class="row">
+							<div class="col-lg-6 form-group">
+								<label>Mobile Number</label>
+								<input class="form-control" type="text" name="number" placeholder="Number" required="">
+							</div>
+                            <div class="col-lg-6 form-group date-plu">
+								<label>Date of Birth</label>
+								<input type="date" name="dob" required="">
+							</div>
+
+						</div>
+						<div class="row">							
+							<div class="col-lg-6 form-group">
+								<label>Select Your Gender</label>
+								<select required="" name="gender" class="form-control">
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>									
+								</select>
+                            </div>
+                            <div class="col-lg-6 form-group date-plu">
+								<label>Username</label>
+								<input class="form-control" type="text" name="uname" placeholder="Username" required="">
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-lg-6 form-group">
+								<label>Password</label>
+								<input class="form-control" type="password" name="password" placeholder="Password" required="">
+							</div>
+							<div class="col-lg-6 form-group">
+								<label>Confirm Password</label>
+								<input class="form-control" type="password" name="cpassword" placeholder="Confirm Password" required="">
+							</div>
+
+						</div>
+						
+						<button type="submit" onclick="disp()"  class="btn submit mt-3">SIgnUp</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- //booking form -->
+    <script>
+        function disp()
+        {
+	var msg="{{msg}}";
+    alert(msg);
+        }
+    </script>
+    {% endblock %}

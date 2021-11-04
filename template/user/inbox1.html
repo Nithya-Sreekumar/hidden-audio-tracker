@@ -1,0 +1,70 @@
+{% extends 'user/user_base.html' %}
+{% block headpart %}
+<style>
+.new {
+    padding: 16px;
+    border: none;
+    width: 100%;
+    background: #fff;
+    outline: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #000;
+    border: 1px solid #b7b7b785;
+}
+.bu {
+    padding: 14px 20px;
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 2px;
+    background: #f0546a;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+<!-- testimonials -->
+<section class="team-main-sec bg-li py-5" id="testi">
+    <div class="container py-xl-5 py-lg-3">
+        <h3 class="tittle text-center text-bl font-weight-bold">Enter Password </h3>
+       <form method="POST">{% csrf_token %}
+           
+           <center>
+            <img src="/{{path}}">               
+            <input type="text" class="new"  name="pass">            
+           <input class="bu" type="submit">
+        </center>
+       </form>
+            <table><tr><td></td>
+                {% for d in udata %}
+        <div>
+           
+            <div  style="text-align: center">
+                <div class="team-gd">                     
+                    <div class="team-info">
+                        <h3>From:   {{d.1}}<span class="sub-tittle-team"></span></h3>
+                        
+                       
+                        <p>Sub:  {{d.3}}</p>
+                        <input onclick="responsiveVoice.speak('{{d.4}}');" class="bu" type='button' value='🔊 Play' />
+                        <p>{{d.5}}</p>
+                       
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <td></tr></table>
+        </div>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    </div>
+</section>
+<!-- //testimonials -->
+
+
+{% endblock %}

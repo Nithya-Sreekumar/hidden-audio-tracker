@@ -1,0 +1,86 @@
+
+{% extends 'user/user_base.html' %}
+{% block content %}
+	<!-- page details -->
+	<div class="breadcrumb-mobamu">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="index.html">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Registration Form</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+	<!-- booking form -->
+	<div class="register-w3 py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="tittle text-center text-bl font-weight-bold">Compose Your Mail</h3>
+			<p class="sub-tittle text-center mt-2 mb-sm-5 mb-4 pb-xl-3">Be a part of the world of secrets and Encryption </p>
+			<div class="comment-top mt-5">
+				<div class="comment-bottom mobamuinfo_mail_grid_right">
+					<form action="" method="post">
+                        {% csrf_token %}
+						<div class="row">
+							<div class="col-lg-6 form-group">
+								<label>To Address</label>
+								<input class="form-control" style="width:1013px" type="email" name="to" placeholder="Type to address.." required="">
+                            </div>
+                           
+							
+                        </div>
+                        <div class="form-group">
+							<label>Compose message</label>
+							<textarea class="form-control" name="compose" placeholder="Write Here.." required=""></textarea>
+						</div>
+                        
+						<div class="row">
+							<div class="col-lg-6 form-group">
+								<label>Input audio</label>
+								<br>
+								<button type="submit" onclick="disp3()" name="rec" class="btn submit mt-3">Draft</button>
+								<input type="image" name="img" src="../static/media/click-her.png" width="200px" height="60px"  alt="click_here" >
+								
+							
+                               
+
+                            </div>
+                            <div class="col-lg-6 form-group">
+								<label>Password</label>
+								<input class="form-control"  type="password" name="password" placeholder="Password" required="">
+
+							</div>
+
+
+						</div>					
+											
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						
+                        <button type="submit" onclick="disp()" name="send"  class="btn submit mt-3">Send</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                        <button type="submit" onclick="disp1()" name="draft" class="btn submit mt-3">Draft</button>
+                        
+                        </form>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- //booking form -->
+    <script>
+        function disp()
+        {
+	var msg="Message has been sent successfully";
+    alert(msg);
+        }
+		function disp1()
+        {
+	var msg="Message has been saved";
+    alert(msg);
+        }
+    </script>
+    {% endblock %}

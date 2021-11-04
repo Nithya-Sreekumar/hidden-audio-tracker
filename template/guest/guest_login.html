@@ -1,0 +1,54 @@
+
+{% extends 'guest/guest_base.html' %}
+{% block content %}
+	<!-- page details -->
+	<div class="breadcrumb-mobamu">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Login</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+	<!-- booking form -->
+	<div class="register-w3 py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="tittle text-center text-bl font-weight-bold">Login</h3>
+			<p class="sub-tittle text-center mt-2 mb-sm-5 mb-4 pb-xl-3">Be a part of the world of secrets and Encryption </p>
+			<div class="comment-top mt-5">
+				<div class="comment-bottom mobamuinfo_mail_grid_right">
+					<form action="" method="post">
+                        {% csrf_token %}
+						
+						<div class="row">
+							<div class="col-lg-6 form-group date-plu">
+								<label>First Name</label>
+								<input class="form-control" type="text" name="uname" placeholder="Type Here.." required="">
+							</div>
+							
+							<div class="col-lg-6 form-group date-plu">
+								<label>Password</label>
+								<input class="form-control" type="password" name="password" placeholder="Type Here.." required="">
+							</div>
+
+
+						</div>
+						
+						<button type="submit" onclick="al()"  class="btn submit mt-3">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function al()
+
+{	
+	
+}
+	</script>
+    <!-- //booking form -->
+    
+    {% endblock %}
